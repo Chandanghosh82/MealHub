@@ -1,0 +1,334 @@
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MealHub - Admin Dashboard</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f7f8fc;
+            color: #222;
+        }
+
+        .navbar {
+            background: white;
+            height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 7%;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            color: #222;
+        }
+
+        .logo span {
+            color: #ff5a1f;
+        }
+
+        .admin-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #666;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        .container h1 {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .container h1 span {
+            color: #ff5a1f;
+        }
+
+        .container > p {
+            color: #777;
+            font-size: 14px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 18px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+        }
+
+        .icon {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            color: #333;
+            font-size: 19px;
+            margin-bottom: 8px;
+        }
+
+        .card p {
+            color: #777;
+            font-size: 13px;
+            min-height: 40px;
+        }
+
+        .card a {
+            display: inline-block;
+            margin-top: 18px;
+            padding: 11px 22px;
+            background: #ff5a1f;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .card a:hover {
+            background: #e64a19;
+            transform: scale(1.03);
+        }
+
+        .logout {
+            margin-top: 40px;
+        }
+
+        .logout a {
+            display: inline-block;
+            padding: 12px 22px;
+            background: #222;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .logout a:hover {
+            background: #ff5a1f;
+        }
+
+        .footer {
+            margin-top: 70px;
+            padding: 25px;
+            background: #222;
+            color: #aaa;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        @media(max-width:600px) {
+
+            .navbar {
+                padding: 0 5%;
+            }
+
+            .admin-label {
+                display: none;
+            }
+
+            .container h1 {
+                font-size: 28px;
+            }
+
+            .container {
+                width: 92%;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="navbar">
+
+        <div class="logo">
+            Meal<span>Hub</span>
+        </div>
+
+        <div class="admin-label">
+            Admin Panel
+        </div>
+
+    </div>
+
+
+    <div class="container">
+
+        <h1>
+            Welcome, <span>Admin</span> 👋
+        </h1>
+
+        <p>
+            Manage your MealHub Food Ordering System
+        </p>
+
+
+        <div class="cards">
+
+
+            <!-- RESTAURANTS -->
+
+            <div class="card">
+
+                <div class="icon">
+                    🏪
+                </div>
+
+                <h3>
+                    Restaurants
+                </h3>
+
+                <p>
+                    Manage restaurants
+                </p>
+
+                <a href="adminRestaurants">
+                    Manage
+                </a>
+
+            </div>
+
+
+            <!-- FOOD -->
+
+            <div class="card">
+
+                <div class="icon">
+                    🍕
+                </div>
+
+                <h3>
+                    Food Items
+                </h3>
+
+                <p>
+                    Manage food items
+                </p>
+
+                <a href="adminFoods">
+                    Manage
+                </a>
+
+            </div>
+
+
+            <!-- ORDERS -->
+
+            <div class="card">
+
+                <div class="icon">
+                    📦
+                </div>
+
+                <h3>
+                    Orders
+                </h3>
+
+                <p>
+                    View customer orders
+                </p>
+
+                <a href="adminOrders">
+                    View Orders
+                </a>
+
+            </div>
+
+
+            <!-- USERS -->
+
+            <div class="card">
+
+                <div class="icon">
+                    👥
+                </div>
+
+                <h3>
+                    Users
+                </h3>
+
+                <p>
+                    View registered users
+                </p>
+
+                <!-- FIXED LINK -->
+
+                <a href="adminUsers">
+                    View Users
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="logout">
+
+            <a href="index.html">
+                ← Back to Home
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer">
+
+        © 2026 MealHub Management System | Admin Panel
+
+    </div>
+
+</body>
+
+</html>
+```

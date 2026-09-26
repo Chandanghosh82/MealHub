@@ -1,0 +1,1760 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MealHub - Online Food Ordering</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+body {
+
+    font-family: 'Poppins', sans-serif;
+
+    background: #f7f8fc;
+
+    color: #222;
+
+}
+
+/* NAVBAR */
+
+.navbar {
+
+    height: 75px;
+
+    background: #151a1f;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 7%;
+
+    box-shadow: 0 3px 18px rgba(0,0,0,0.25);
+
+    position: relative;
+
+    z-index: 100;
+
+    border-bottom: 1px solid #2b333a;
+
+}
+
+.logo {
+
+    font-size: 26px;
+
+    font-weight: 800;
+
+    color: white;
+
+    text-decoration: none;
+
+    letter-spacing: -0.5px;
+
+    background: linear-gradient(135deg, #ff5a1f, #ff8a00);
+
+    padding: 8px 22px;
+
+    border-radius: 50px;
+
+    box-shadow: 0 5px 18px rgba(255,90,31,0.30);
+
+    transition: 0.3s;
+
+}
+
+.logo span {
+
+    color: #fff4e8;
+
+}
+
+.logo:hover {
+
+    transform: scale(1.05);
+
+    box-shadow: 0 7px 22px rgba(255,90,31,0.45);
+
+}
+
+.nav-links {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+}
+
+.nav-links a {
+
+    text-decoration: none;
+
+    color: #eeeeee;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+}
+
+.nav-links a:hover {
+
+    color: #ff7a3d;
+
+}
+
+/* LOGIN */
+
+.login-box {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 6px;
+
+    padding: 9px 14px;
+
+    border: 1px solid #198754;
+
+    border-radius: 6px;
+
+    background: #198754;
+
+    color: white !important;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    box-shadow: 0 4px 12px rgba(25,135,84,0.30);
+
+    transition: 0.3s;
+
+}
+
+.login-box:hover {
+
+    background: #157347;
+
+    color: white !important;
+
+    transform: translateY(-1px);
+
+}
+
+/* PROFILE */
+
+.profile-container {
+
+    position: relative;
+
+}
+
+.profile-button {
+
+    width: 46px;
+
+    height: 46px;
+
+    border-radius: 50%;
+
+    border: none;
+
+    background: #198754;
+
+    color: white;
+
+    font-size: 19px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    box-shadow: 0 4px 14px rgba(25,135,84,0.40);
+
+    transition: 0.3s;
+
+}
+
+.profile-button:hover {
+
+    transform: scale(1.06);
+
+    background: #157347;
+
+}
+
+.profile-dropdown {
+
+    display: none;
+
+    position: absolute;
+
+    right: 0;
+
+    top: 58px;
+
+    width: 280px;
+
+    background: white;
+
+    border-radius: 18px;
+
+    box-shadow: 0 10px 35px rgba(0,0,0,0.30);
+
+    padding: 20px;
+
+    border: 1px solid #eeeeee;
+
+}
+
+.profile-dropdown.show {
+
+    display: block;
+
+}
+
+.profile-header {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding-bottom: 15px;
+
+    border-bottom: 1px solid #eeeeee;
+
+}
+
+.profile-large {
+
+    width: 55px;
+
+    height: 55px;
+
+    border-radius: 50%;
+
+    background: #151a1f;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+}
+
+.profile-name {
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    color: #222;
+
+}
+
+.profile-role {
+
+    font-size: 12px;
+
+    color: #777;
+
+    margin-top: 3px;
+
+}
+
+.profile-info {
+
+    padding: 15px 0;
+
+}
+
+.profile-info p {
+
+    font-size: 13px;
+
+    margin: 9px 0;
+
+    color: #555;
+
+    word-break: break-word;
+
+}
+
+.profile-info b {
+
+    color: #222;
+
+}
+
+.profile-dropdown a {
+
+    display: block;
+
+    text-decoration: none;
+
+    padding: 11px 13px;
+
+    border-radius: 10px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    margin-top: 7px;
+
+}
+
+.profile-link {
+
+    color: #333;
+
+    background: green;
+
+}
+
+.profile-link:hover {
+
+    background: #e8f7ef;
+
+    color: #198754;
+
+}
+
+.logout-link {
+
+    color: white;
+
+    background: #222;
+
+    text-align: center;
+
+}
+
+.logout-link:hover {
+
+    background: #198754;
+
+}
+
+/* ADMIN */
+
+.admin-circle {
+
+    width: 50px;
+
+    height: 50px;
+
+    border-radius: 50%;
+
+    background: #0d6efd;
+
+    color: white !important;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-decoration: none !important;
+
+    font-size: 19px;
+
+    font-weight: 700;
+
+    box-shadow: 0 4px 14px rgba(13,110,253,0.40);
+
+    transition: 0.3s;
+
+}
+
+.admin-circle:hover {
+
+    background: #0b5ed7;
+
+    color: white !important;
+
+    transform: scale(1.06);
+
+}
+
+/* HERO */
+
+.hero {
+
+    min-height: 350px;
+
+    padding: 45px 7%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 50px;
+
+    background: linear-gradient(135deg, #111820, #1b252e, #202b35);
+
+}
+
+.hero-content {
+
+    max-width: 600px;
+
+}
+
+.hero-content h1 {
+
+    font-size: 45px;
+
+    line-height: 1.15;
+
+    font-weight: 800;
+
+    margin-bottom: 20px;
+
+    color: white;
+
+}
+
+.hero-content h1 span {
+
+    color: #ff6b2c;
+
+}
+
+.hero-content p {
+
+    color: #bfc7ce;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+}
+
+.hero-buttons {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+    align-items: stretch;
+
+    min-width: 210px;
+
+    margin-right: 120px;
+
+}
+
+.primary-btn {
+
+    background: #ff5a1f;
+
+    color: white;
+
+    padding: 15px 25px;
+
+    border-radius: 12px;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    text-align: center;
+
+    transition: 0.3s;
+
+}
+
+.primary-btn:hover {
+
+    background: #e94d15;
+
+    transform: translateY(-2px);
+
+}
+
+.secondary-btn {
+
+    background: #ffffff;
+
+    color: #222;
+
+    padding: 15px 25px;
+
+    border-radius: 12px;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    border: 1px solid #555;
+
+    text-align: center;
+
+    transition: 0.3s;
+
+}
+
+.secondary-btn:hover {
+
+    border-color: #ff5a1f;
+
+    color: #ff5a1f;
+
+    transform: translateY(-2px);
+
+}
+
+/* SEARCH */
+
+.search-section {
+
+    padding: 25px 20px;
+
+    background: #f4f5f7;
+
+}
+
+.search-box {
+
+    width: 90%;
+
+    max-width: 850px;
+
+    margin: auto;
+
+    display: flex;
+
+    background: white;
+
+    border-radius: 16px;
+
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+
+    padding: 8px;
+
+    border: 1px solid #dddddd;
+
+}
+
+.search-box input {
+
+    flex: 1;
+
+    border: none;
+
+    outline: none;
+
+    padding: 14px 18px;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 14px;
+
+}
+
+.search-box button {
+
+    border: none;
+
+    background: #ff5a1f;
+
+    color: white;
+
+    padding: 13px 25px;
+
+    border-radius: 11px;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+}
+
+.search-box button:hover {
+
+    background: #e94d15;
+
+}
+
+/* OFFERS */
+
+.offers-section {
+
+    padding: 25px 7%;
+
+    background: #fff8f2;
+
+}
+
+.offers-title {
+
+    text-align: center;
+
+    margin-bottom: 18px;
+
+}
+
+.offers-title h2 {
+
+    font-size: 25px;
+
+    font-weight: 800;
+
+    color: #222;
+
+}
+
+.offers-title p {
+
+    color: #777;
+
+    font-size: 13px;
+
+    margin-top: 5px;
+
+}
+
+.offers-container {
+
+    display: grid;
+
+    grid-template-columns: repeat(6, 1fr);
+
+    gap: 15px;
+
+    max-width: 1100px;
+
+    margin: auto;
+
+}
+
+.offer-box {
+
+    height: 135px;
+
+    background: white;
+
+    border-radius: 16px;
+
+    padding: 12px 8px;
+
+    text-align: center;
+
+    border: 1px solid #ffe0cc;
+
+    box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+
+    transition: 0.3s;
+
+    text-decoration: none;
+
+    color: inherit;
+
+    display: block;
+
+}
+
+.offer-box:hover {
+
+    transform: translateY(-6px);
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.14);
+
+    border-color: #ff5a1f;
+
+}
+
+.offer-icon {
+
+    font-size: 30px;
+
+    margin-bottom: 7px;
+
+}
+
+.offer-box h3 {
+
+    color: #ff5a1f;
+
+    font-size: 16px;
+
+    font-weight: 800;
+
+    margin-bottom: 5px;
+
+}
+
+.offer-box p {
+
+    color: #666;
+
+    font-size: 11px;
+
+    line-height: 1.4;
+
+    margin-bottom: 8px;
+
+}
+
+.offer-code {
+
+    display: inline-block;
+
+    background: #fff0e6;
+
+    color: #e85d04;
+
+    padding: 4px 7px;
+
+    border-radius: 5px;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+}
+
+/* QUICK PICKS */
+
+.quick-section {
+
+    padding: 35px 7%;
+
+    background: #20272e;
+
+}
+
+.section-title {
+
+    text-align: center;
+
+    margin-bottom: 20px;
+
+}
+
+.section-title h2 {
+
+    font-size: 27px;
+
+    font-weight: 800;
+
+    color: white;
+
+}
+
+.section-title p {
+
+    color: #aeb7bf;
+
+    font-size: 14px;
+
+    margin-top: 7px;
+
+}
+
+.quick-picks {
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+
+    gap: 15px;
+
+    max-width: 1100px;
+
+    margin: auto;
+
+}
+
+.quick-card {
+
+    background: #2c353d;
+
+    padding: 18px 12px;
+
+    text-align: center;
+
+    border-radius: 18px;
+
+    text-decoration: none;
+
+    color: white;
+
+    box-shadow: 0 6px 22px rgba(0,0,0,0.25);
+
+    transition: 0.3s;
+
+    border: 1px solid #3b464f;
+
+}
+
+.quick-card:hover {
+
+    transform: translateY(-6px);
+
+    box-shadow: 0 12px 30px rgba(0,0,0,0.40);
+
+    border-color: #ff5a1f;
+
+}
+
+.quick-icon {
+
+    font-size: 35px;
+
+    margin-bottom: 8px;
+
+}
+
+.quick-card h3 {
+
+    font-size: 15px;
+
+}
+
+/* FEATURES */
+
+.features {
+
+    padding: 50px 7%;
+
+    background: #111820;
+
+}
+
+.feature-container {
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 25px;
+
+    max-width: 1100px;
+
+    margin: auto;
+
+}
+
+.feature-card {
+
+    text-align: center;
+
+    padding: 30px 20px;
+
+    border-radius: 18px;
+
+    background: #1d262e;
+
+    border: 1px solid #303b44;
+
+    box-shadow: 0 6px 20px rgba(0,0,0,0.20);
+
+}
+
+.feature-icon {
+
+    font-size: 40px;
+
+    margin-bottom: 15px;
+
+}
+
+.feature-card h3 {
+
+    margin-bottom: 8px;
+
+    font-size: 18px;
+
+    color: white;
+
+}
+
+.feature-card p {
+
+    color: #aeb7bf;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+}
+
+/* FOOTER */
+
+footer {
+
+    background: #090d11;
+
+    color: #8f989f;
+
+    text-align: center;
+
+    padding: 30px 20px;
+
+    font-size: 13px;
+
+    border-top: 1px solid #222b32;
+
+}
+
+/* MOBILE */
+
+@media(max-width: 700px) {
+
+    .navbar {
+
+        padding: 0 5%;
+
+    }
+
+    .nav-links {
+
+        gap: 10px;
+
+    }
+
+    .nav-links a {
+
+        font-size: 11px;
+
+    }
+
+    .login-box {
+
+        padding: 7px 9px;
+
+        font-size: 11px;
+
+    }
+
+    .admin-circle {
+
+        width: 36px;
+
+        height: 36px;
+
+        font-size: 16px;
+
+    }
+
+    .hero {
+
+        flex-direction: column;
+
+        text-align: center;
+
+        padding: 60px 5%;
+
+    }
+
+    .hero-content {
+
+        max-width: 100%;
+
+    }
+
+    .hero-content h1 {
+
+        font-size: 38px;
+
+    }
+
+    .hero-buttons {
+
+        width: 100%;
+
+        max-width: 300px;
+
+        margin-right: 0;
+
+    }
+
+    .search-box {
+
+        flex-direction: column;
+
+    }
+
+    .search-box input {
+
+        width: 100%;
+
+    }
+
+    .search-box button {
+
+        width: 100%;
+
+    }
+
+    .profile-dropdown {
+
+        right: -5px;
+
+    }
+
+    .offers-container {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+}
+
+/* TABLET */
+
+@media(min-width: 701px) and (max-width: 1000px) {
+
+    .offers-container {
+
+        grid-template-columns: repeat(3, 1fr);
+
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+    <a href="index.html" class="logo">
+        Meal<span>Hub</span>
+    </a>
+
+    <div class="nav-links">
+
+        <a href="register" class="login-box">
+            📝 Register
+        </a>
+
+        <a href="myOrders">
+            📦 My Orders
+        </a>
+
+        <a href="cart">
+            🛒 Cart
+        </a>
+
+        <div class="profile-container">
+
+            <button class="profile-button"
+                    id="profileButton"
+                    onclick="toggleProfile()">
+
+                <span id="profileInitial">?</span>
+
+            </button>
+
+            <div class="profile-dropdown"
+                 id="profileDropdown">
+
+                <div class="profile-header">
+
+                    <div class="profile-large"
+                         id="profileLarge">
+                        ?
+                    </div>
+
+                    <div>
+
+                        <div class="profile-name"
+                             id="profileName">
+                            Guest
+                        </div>
+
+                        <div class="profile-role"
+                             id="profileRole">
+                            Not Logged In
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="profile-info">
+
+                    <p>
+
+                        <b>📧 Email:</b>
+
+                        <span id="profileEmail">
+                            Please login
+                        </span>
+
+                    </p>
+
+                    <p>
+
+                        <b>👑 Role:</b>
+
+                        <span id="profileRoleInfo">
+                            Guest
+                        </span>
+
+                    </p>
+
+                </div>
+
+                <a href="profile"
+                   class="profile-link"
+                   id="profileLink">
+
+                    👤 My Profile
+
+                </a>
+
+                <a href="login.html"
+                   class="logout-link"
+                   id="loginLink">
+
+                    🔐 Login
+
+                </a>
+
+                <a href="logout"
+                   class="logout-link"
+                   id="logoutLink"
+                   style="display:none;">
+
+                    🚪 Logout
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- ADMIN ICON - PERMANENT -->
+
+        <a href="admin.html"
+           id="adminCircle"
+           class="admin-circle"
+           title="Admin Dashboard">
+
+            ADMIN
+
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>
+
+            Delicious food,
+
+            <span>delivered fast.</span>
+
+        </h1>
+
+        <p>
+
+            Discover delicious meals from your favourite restaurants and get them delivered right to your doorstep with MealHub.
+
+        </p>
+
+    </div>
+
+    <div class="hero-buttons">
+
+        <a href="foods"
+           class="primary-btn">
+
+            🍴 Explore Food
+
+        </a>
+
+        <a href="restaurants"
+           class="secondary-btn">
+
+            🏪 View Restaurants
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- SEARCH -->
+
+<section class="search-section">
+
+    <form class="search-box"
+          action="searchFood"
+          method="get">
+
+        <input
+            type="text"
+            name="search"
+            placeholder="Search food, restaurant or category"
+        >
+
+        <button type="submit">
+
+            🔍 Search
+
+        </button>
+
+    </form>
+
+</section>
+
+
+<!-- OFFERS -->
+
+<section class="offers-section">
+
+    <div class="offers-title">
+
+        <h2>🔥 Today's Offers</h2>
+
+        <p>
+            Grab these limited-time MealHub deals
+        </p>
+
+    </div>
+
+    <div class="offers-container">
+
+
+        <a href="cart?coupon=FIRST50"
+           class="offer-box">
+
+            <div class="offer-icon">🍕</div>
+
+            <h3>50% OFF</h3>
+
+            <p>
+                On your first order
+            </p>
+
+            <span class="offer-code">
+                FIRST50
+            </span>
+
+        </a>
+
+
+        <a href="cart?coupon=LIMITED"
+           class="offer-box">
+
+            <div class="offer-icon">🚚</div>
+
+            <h3>FREE DELIVERY</h3>
+
+            <p>
+                Orders above ₹299
+            </p>
+
+            <span class="offer-code">
+                LIMITED
+            </span>
+
+        </a>
+
+
+        <a href="cart?coupon=SAVE100"
+           class="offer-box">
+
+            <div class="offer-icon">💰</div>
+
+            <h3>₹100 OFF</h3>
+
+            <p>
+                Orders above ₹499
+            </p>
+
+            <span class="offer-code">
+                SAVE100
+            </span>
+
+        </a>
+
+
+        <a href="cart?coupon=BURGER30"
+           class="offer-box">
+
+            <div class="offer-icon">🍔</div>
+
+            <h3>30% OFF</h3>
+
+            <p>
+                Selected burgers
+            </p>
+
+            <span class="offer-code">
+                BURGER30
+            </span>
+
+        </a>
+
+
+        <a href="cart?coupon=BIRYANI20"
+           class="offer-box">
+
+            <div class="offer-icon">🍛</div>
+
+            <h3>20% OFF</h3>
+
+            <p>
+                Special Biryani
+            </p>
+
+            <span class="offer-code">
+                BIRYANI20
+            </span>
+
+        </a>
+
+
+        <a href="cart?coupon=NEW50"
+           class="offer-box">
+
+            <div class="offer-icon">⭐</div>
+
+            <h3>₹50 OFF</h3>
+
+            <p>
+                For new customers
+            </p>
+
+            <span class="offer-code">
+                NEW50
+            </span>
+
+        </a>
+
+
+    </div>
+
+</section>
+
+
+<!-- QUICK PICKS -->
+
+<section class="quick-section">
+
+    <div class="section-title">
+
+        <h2>Quick Picks</h2>
+
+        <p>
+            Find what you're craving
+        </p>
+
+    </div>
+
+    <div class="quick-picks">
+
+
+        <a href="searchFood?search=99"
+           class="quick-card">
+
+            <div class="quick-icon">💰</div>
+
+            <h3>
+                Under ₹99
+            </h3>
+
+        </a>
+
+
+        <a href="searchFood?search=199"
+           class="quick-card">
+
+            <div class="quick-icon">🏷️</div>
+
+            <h3>
+                Under ₹199
+            </h3>
+
+        </a>
+
+
+        <a href="searchFood?search=Pizza"
+           class="quick-card">
+
+            <div class="quick-icon">🍕</div>
+
+            <h3>
+                Pizza
+            </h3>
+
+        </a>
+
+
+        <a href="searchFood?search=Biryani"
+           class="quick-card">
+
+            <div class="quick-icon">🍛</div>
+
+            <h3>
+                Biryani
+            </h3>
+
+        </a>
+
+
+        <a href="searchFood?search=Burger"
+           class="quick-card">
+
+            <div class="quick-icon">🍔</div>
+
+            <h3>
+                Burgers
+            </h3>
+
+        </a>
+
+
+        <a href="searchFood?search=Indian"
+           class="quick-card">
+
+            <div class="quick-icon">🥘</div>
+
+            <h3>
+                Indian
+            </h3>
+
+        </a>
+
+
+    </div>
+
+</section>
+
+
+<!-- FEATURES -->
+
+<section class="features">
+
+    <div class="section-title">
+
+        <h2>
+            Why Choose MealHub?
+        </h2>
+
+        <p>
+            Everything you need for a great food experience
+        </p>
+
+    </div>
+
+
+    <div class="feature-container">
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">🚀</div>
+
+            <h3>
+                Fast Delivery
+            </h3>
+
+            <p>
+                Get your favourite food delivered quickly and conveniently.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">🍽️</div>
+
+            <h3>
+                Great Food
+            </h3>
+
+            <p>
+                Choose from a wide variety of delicious dishes and restaurants.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">🔒</div>
+
+            <h3>
+                Secure Ordering
+            </h3>
+
+            <p>
+                Your account and orders are securely managed by MealHub.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">💳</div>
+
+            <h3>
+                Easy Payment
+            </h3>
+
+            <p>
+                Enjoy simple and convenient payment options for your orders.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    © 2026 MealHub Management System. All Rights Reserved.
+
+</footer>
+
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+function toggleProfile() {
+
+    const dropdown =
+        document.getElementById("profileDropdown");
+
+    dropdown.classList.toggle("show");
+
+}
+
+
+document.addEventListener("click", function(event) {
+
+    const container =
+        document.querySelector(".profile-container");
+
+    const dropdown =
+        document.getElementById("profileDropdown");
+
+    if (!container.contains(event.target)) {
+
+        dropdown.classList.remove("show");
+
+    }
+
+});
+
+
+fetch("profile")
+
+    .then(function(response) {
+
+        if (!response.ok) {
+
+            throw new Error("User is not logged in");
+
+        }
+
+        return response.text();
+
+    })
+
+    .then(function(data) {
+
+        const parser =
+            new DOMParser();
+
+        const html =
+            parser.parseFromString(data, "text/html");
+
+        const text =
+            html.body.innerText;
+
+
+        const nameMatch =
+            text.match(/Name:\s*(.*)/);
+
+
+        if (nameMatch) {
+
+            const name =
+                nameMatch[1].trim();
+
+            if (name.length > 0) {
+
+                const initial =
+                    name.substring(0, 1).toUpperCase();
+
+                document.getElementById("profileInitial").innerText =
+                    initial;
+
+                document.getElementById("profileLarge").innerText =
+                    initial;
+
+                document.getElementById("profileName").innerText =
+                    name;
+
+            }
+
+        }
+
+
+        const emailMatch =
+            text.match(/Email:\s*(.*)/);
+
+
+        if (emailMatch) {
+
+            document.getElementById("profileEmail").innerText =
+                emailMatch[1].trim();
+
+        }
+
+
+        const roleMatch =
+            text.match(/Role:\s*(.*)/);
+
+
+        if (roleMatch) {
+
+            const role =
+                roleMatch[1].trim();
+
+            document.getElementById("profileRole").innerText =
+                role;
+
+            document.getElementById("profileRoleInfo").innerText =
+                role;
+
+        }
+
+
+        document.getElementById("loginLink").style.display =
+            "none";
+
+        document.getElementById("logoutLink").style.display =
+            "block";
+
+    })
+
+
+    .catch(function() {
+
+        document.getElementById("profileInitial").innerText =
+            "?";
+
+        document.getElementById("profileLarge").innerText =
+            "?";
+
+        document.getElementById("profileName").innerText =
+            "Guest";
+
+        document.getElementById("profileRole").innerText =
+            "Not Logged In";
+
+        document.getElementById("profileEmail").innerText =
+            "Please login";
+
+        document.getElementById("profileRoleInfo").innerText =
+            "Guest";
+
+        document.getElementById("profileLink").style.display =
+            "none";
+
+        document.getElementById("logoutLink").style.display =
+            "none";
+
+        document.getElementById("loginLink").style.display =
+            "block";
+
+        /* ADMIN REMAINS VISIBLE */
+
+        document.getElementById("adminCircle").style.display =
+            "flex";
+
+    });
+
+</script>
+
+</body>
+
+</html>

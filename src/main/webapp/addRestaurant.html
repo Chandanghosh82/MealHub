@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Add Restaurant - Admin</title>
+
+```
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f5f5f5;
+    }
+
+    .navbar {
+        background: #ff5722;
+        color: white;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .container {
+        width: 450px;
+        margin: 50px auto;
+        background: white;
+        padding: 35px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    }
+
+    h1 {
+        text-align: center;
+        color: #333;
+    }
+
+    label {
+        display: block;
+        margin-top: 18px;
+        margin-bottom: 7px;
+        font-weight: bold;
+        color: #444;
+    }
+
+    input {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        box-sizing: border-box;
+        font-size: 15px;
+    }
+
+    input:focus {
+        border-color: #ff5722;
+        outline: none;
+    }
+
+    button {
+        width: 100%;
+        margin-top: 25px;
+        padding: 13px;
+        background: #ff5722;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #e64a19;
+    }
+
+    .back {
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+        color: #ff5722;
+        text-decoration: none;
+        font-weight: bold;
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<div class="navbar">
+    <h2>🍴 Food Delivery - Admin Panel</h2>
+</div>
+
+<div class="container">
+
+    <h1>Add Restaurant</h1>
+
+    <form action="addRestaurant" method="post">
+
+        <label>Restaurant Name</label>
+        <input type="text" name="restaurantName" required>
+
+        <label>Location</label>
+        <input type="text" name="location" required>
+
+        <label>Phone</label>
+        <input type="text" name="phone" required>
+
+        <button type="submit">Add Restaurant</button>
+
+    </form>
+
+    <a href="adminRestaurants" class="back">
+        ← Back to Restaurants
+    </a>
+
+</div>
+```
+
+</body>
+</html>
