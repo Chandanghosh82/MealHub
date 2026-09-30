@@ -82,35 +82,6 @@ MealHub
 └── README.md
 ```
 
-## ⚙️ How to Run
-
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/Chandanghosh82/MealHub.git
-```
-
-### 2. Open the Project
-
-Open the project in **Eclipse IDE**.
-
-### 3. Configure MySQL
-
-Create the required database and tables in MySQL.
-
-Update the database connection details in the Java database utility class.
-
-### 4. Configure Tomcat
-
-Use **Apache Tomcat 10.1** as the server.
-
-### 5. Run the Project
-
-Start the Tomcat server and open the application in your browser.
-
-```text
-http://localhost:8080/FoodDelivery/
-```
 
 ## 🎯 Project Objective
 
@@ -133,8 +104,6 @@ Through this project, I gained practical experience in:
 
 ## 🔮 Future Enhancements
 
-* Online Payment Integration
-* Restaurant Owner Dashboard
 * User Reviews and Ratings
 * Email/SMS Notifications
 * Real-time Order Tracking
